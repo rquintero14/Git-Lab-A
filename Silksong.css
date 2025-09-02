@@ -1,0 +1,137 @@
+:root {
+  --bg:#0b0f14;
+  --panel:#121925;
+  --ink:#e6f0ff;
+  --muted:#a8b3c7;
+  --accent:#6dd3ff;
+  --accent-2:#7ef7c9;
+  --ring:rgba(109,211,255,.35);
+  --radius:14px;
+}
+
+* { box-sizing:border-box; }
+html, body { height:100%; }
+
+body {
+  margin:0;
+  font-family:system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Inter, Arial, sans-serif;
+  color:var(--ink);
+  background:
+    radial-gradient(1200px 700px at 80% -20%, #15304d 0%, transparent 60%),
+    radial-gradient(900px 600px at -10% 20%, #14233a 0%, transparent 60%),
+    var(--bg);
+  line-height:1.6;
+}
+
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; }
+
+.wrap { max-width:980px; margin-inline:auto; padding:20px; }
+
+header {
+  position:sticky; top:0;
+  backdrop-filter:saturate(1.2) blur(8px);
+  background:linear-gradient(180deg, rgba(11,15,20,.85), rgba(11,15,20,.55));
+  border-bottom:1px solid rgba(255,255,255,.06);
+  z-index:10;
+}
+
+.nav { display:flex; align-items:center; gap:16px; justify-content:space-between; }
+.brand { display:flex; align-items:center; gap:12px; }
+
+.logo {
+  width:36px; height:36px; border-radius:50%;
+  background: radial-gradient(circle at 30% 35%, #9bdcff, #4aa1f3 40%, #2b4a88 75%);
+  box-shadow:0 0 0 3px rgba(109,211,255,.15), 0 6px 22px rgba(0,0,0,.35);
+}
+
+.brand h1 { font-size:1.05rem; margin:0; letter-spacing:.5px; }
+
+.menu { display:flex; gap:16px; font-size:.95rem; }
+.menu a { padding:8px 10px; border-radius:10px; }
+.menu a:hover { background:rgba(255,255,255,.05); }
+
+.hero {
+  display:grid; grid-template-columns:1.1fr .9fr; gap:28px; align-items:center;
+  padding-block:32px;
+}
+
+.tag {
+  display:inline-flex; gap:8px; align-items:center;
+  font-size:.8rem; color:var(--muted);
+  padding:6px 10px; border:1px solid rgba(255,255,255,.08); border-radius:999px;
+  background:rgba(255,255,255,.03);
+}
+
+.hero h2 { font-size:clamp(1.6rem, 2.6vw + 1rem, 2.6rem); margin:.6rem 0 0; }
+.lead { font-size:1.05rem; color:#d6e3ffb3; margin:.6rem 0 1rem; }
+
+.cta { display:flex; gap:12px; flex-wrap:wrap; }
+.btn {
+  display:inline-flex; align-items:center; gap:10px;
+  padding:12px 16px; border-radius:12px;
+  border:1px solid rgba(255,255,255,.08);
+  background:linear-gradient(180deg,#162232,#0f1622);
+  color:var(--ink); cursor:pointer;
+}
+.btn:focus { outline:3px solid var(--ring); outline-offset:2px; }
+.btn.primary {
+  background:linear-gradient(180deg, #7ef7c933, #6dd3ff33);
+  border-color:rgba(109,211,255,.35);
+  box-shadow:0 6px 24px rgba(109,211,255,.15) inset, 0 6px 24px rgba(0,0,0,.35);
+}
+
+.panel {
+  background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:var(--radius);
+  padding:18px;
+}
+
+.grid { display:grid; gap:18px; }
+.grid.cols-3 { grid-template-columns:repeat(3,1fr); }
+.grid.cols-2 { grid-template-columns:repeat(2,1fr); }
+
+.feature h3 { margin:.2rem 0 .2rem; font-size:1.05rem; }
+.muted { color:var(--muted); }
+
+.kpi { display:flex; flex-wrap:wrap; gap:14px; }
+.kpi .chip {
+  padding:8px 12px; border-radius:999px;
+  border:1px solid rgba(255,255,255,.08);
+  background:rgba(255,255,255,.03);
+  font-size:.88rem; color:#d6e3ffcc;
+}
+
+.badge {
+  display:inline-block; margin-left:8px; font-size:.78rem;
+  padding:3px 8px; border-radius:8px;
+  border:1px solid rgba(255,255,255,.12);
+  color:#cfe7ff; background:rgba(109,211,255,.08);
+}
+
+.subtle { font-size:.9rem; color:var(--muted); margin:.25rem 0 0; }
+
+hr { border:0; border-top:1px solid rgba(255,255,255,.08); margin:26px 0; }
+
+footer { color:#9fb2cc; font-size:.85rem; padding:28px 0 44px; }
+
+.art {
+  min-height:220px; border-radius:var(--radius);
+  background:
+    radial-gradient(120px 60px at 20% 25%, rgba(255,255,255,.35), transparent 60%),
+    radial-gradient(220px 120px at 80% 35%, rgba(126,247,201,.45), transparent 60%),
+    radial-gradient(420px 220px at 60% 80%, rgba(109,211,255,.25), transparent 60%),
+    linear-gradient(180deg, #0e1420, #0b0f14);
+  border:1px solid rgba(255,255,255,.08);
+  box-shadow:inset 0 0 40px rgba(109,211,255,.08);
+}
+
+@media (max-width: 860px) {
+  .hero { grid-template-columns:1fr; gap:18px; }
+  .grid.cols-3 { grid-template-columns:1fr; }
+  .grid.cols-2 { grid-template-columns:1fr; }
+  .menu { display:none; }
+}
+
+
